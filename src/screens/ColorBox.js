@@ -21,22 +21,23 @@ const reducer = (state, action) => {
 const ColorBox = () => {
     
     const [state, dispatch] = useReducer(reducer, {red: 0, green: 0, blue: 0});
+    const {red, green, blue} = state;
     
   return (
     <View>
       <ColorSettings
-        onIncrease={() => }
-        onDecrease={() => }
+        onIncrease={() => dispatch({colorToChange: 'red', amount: COLOR_SETTING})}
+        onDecrease={() => dispatch({colorToChange: 'red', amount: -1 * COLOR_SETTING})}
         color="Red"
       />
       <ColorSettings
-        onIncrease={() => }
-        onDecrease={() => }
+        onIncrease={() => dispatch({colorToChange: 'green', amount: COLOR_SETTING})}
+        onDecrease={() => dispatch({colorToChange: 'green', amount: -1 * COLOR_SETTING})}
         color="Green"
       />
       <ColorSettings
-        onIncrease={() => }
-        onDecrease={() => }
+        onIncrease={() => dispatch({colorToChange: 'blue', amount: COLOR_SETTING})}
+        onDecrease={() => dispatch({colorToChange: 'blue', amount: -1 * COLOR_SETTING})}
         color="Blue"
       />
       <View
