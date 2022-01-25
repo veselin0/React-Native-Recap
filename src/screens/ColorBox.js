@@ -10,21 +10,43 @@ const ColorBox = () => {
   const [green, setGreen] = useState(0);
   const [blue, setBlue] = useState(0);
 
+  const setColor = (color, change) => {
+    switch (color) {
+      case 'red':
+        red + change > 255 || red + change < 0 
+            ? null 
+            : setRed(red + change);
+        break;
+      case 'green':
+        green + change > 255 || green + change < 0
+          ? null
+          : setGreen(green + change);
+        break;
+      case 'blue':
+        blue + change > 255 || blue + change < 0
+          ? null
+          : setBlue(blue + change);
+        break;
+      default: 
+        break;  
+    }
+  };
+
   return (
     <View>
       <ColorSettings
-        onIncrease={() => setRed(red + COLOR_SETTING)}
-        onDecrease={() => setRed(red - COLOR_SETTING)}
+        onIncrease={() => setColor('red', + COLOR_SETTING)}
+        onDecrease={() => setColor('red', -1 * COLOR_SETTING)}
         color="Red"
       />
       <ColorSettings
-        onIncrease={() => setGreen(green + COLOR_SETTING)}
-        onDecrease={() => setGreen(green - COLOR_SETTING)}
+        onIncrease={() => setColor('green', + COLOR_SETTING)}
+        onDecrease={() => setColor('green', -1 * COLOR_SETTING)}
         color="Green"
       />
       <ColorSettings
-        onIncrease={() => setBlue(blue + COLOR_SETTING)}
-        onDecrease={() => setBlue(blue - COLOR_SETTING)}
+        onIncrease={() => setColor('blue', + COLOR_SETTING)}
+        onDecrease={() => setColor('blue', -1 * COLOR_SETTING)}
         color="Blue"
       />
       <View
