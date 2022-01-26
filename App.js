@@ -11,6 +11,7 @@ import ColorScreen from './src/screens/ColorScreen';
 import ColorBox from './src/screens/ColorBox';
 import TextScreen from './src/screens/TextScreen';
 import LogInScreen from './src/screens/LogInScreen';
+import BoxModelScreen from './src/screens/BoxModelScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,7 @@ const App = () => {
         <Stack.Screen name="SetColor" component={ColorBox} />
         <Stack.Screen name="Text" component={TextScreen} />
         <Stack.Screen name="LogIn" component={LogInScreen} />
+        <Stack.Screen name="BoxModel" component={BoxModelScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
