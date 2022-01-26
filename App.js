@@ -9,6 +9,7 @@ import ImageScreen from './src/screens/ImageScreen';
 import CounterScreen from './src/screens/CounterScreen';
 import ColorScreen from './src/screens/ColorScreen';
 import ColorBox from './src/screens/ColorBox';
+import TextScreen from './src/screens/TextScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,7 @@ const App = () => {
         <Stack.Screen name="Counter" component={CounterScreen} />
         <Stack.Screen name="Colors" component={ColorScreen} />
         <Stack.Screen name="SetColor" component={ColorBox} />
+        <Stack.Screen name="Text" component={TextScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
